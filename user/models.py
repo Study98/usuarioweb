@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 
 from django.contrib.auth.models import AbstractUser, BaseUserManager, PermissionsMixin
@@ -29,6 +30,7 @@ class UserManager(BaseUserManager):
    
 class UserDados(AbstractUser, PermissionsMixin):
     email = models.EmailField('E-mail', unique = True)
+    louser = models.CharField(max_length=30, verbose_name= "Nome de Usuário", default = 'registrado')
     luser = models.CharField(max_length=30, verbose_name= "Primeiro Nome")
     suser = models.CharField(max_length=100, verbose_name= "Segundo Nome")
     cpf = models.CharField(max_length=16, blank= False)
@@ -42,7 +44,7 @@ class UserDados(AbstractUser, PermissionsMixin):
     complemento =models.CharField(max_length=60, blank = True)
     
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['luser']
+    REQUIRED_FIELDS = ['louser']
     
     objects = UserManager()
     

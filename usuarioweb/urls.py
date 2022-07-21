@@ -24,5 +24,6 @@ urlpatterns = [
     path('contas/', include('django.contrib.auth.urls')),
     path('cadastrar/', UserCreate.as_view(),name='cadastro'),
     path('atualizar/<int:pk>', UserUpdate.as_view(),name='atualizar'),
+    path('atualizar/deletar/<int:pk>', UserDelete.as_view(),name='excluir'),
     
 ]

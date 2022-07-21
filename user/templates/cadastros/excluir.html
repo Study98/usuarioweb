@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% block content %}      
+{% load crispy_forms_tags %}
+<h2>Excluir Dados</h2>
+
+<form action="" method="post" id= "attForm" >
+
+    {% csrf_token %}
+    
+   {{ form|crispy }}
+    <p>Deseja excluir PERMANENTEMENTE os seus dados?</p>
+    <br><br>
+    <button type="submit" class="btn btn-primary mt-3">Excluir</button>
+    <br><br>
+    <a href="{% url 'index' %}" class="btn btn-danger mt-3" id="botao">
+      Cancelar
+    </a>
+  
+  
+  </form>
+{% endblock %} 
