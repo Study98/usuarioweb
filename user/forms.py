@@ -23,3 +23,4 @@ class CustomUserDadosChangeForm(UserChangeForm):
         model = UserDados
         fields  = ('username','luser','suser', 'cpf', 'pis','pais','estado',
                    'municipio','cep','rua','numero','complemento')
+        exclude = ('password',)
