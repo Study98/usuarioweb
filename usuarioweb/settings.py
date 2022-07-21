@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'user',
+    
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +130,8 @@ AUTH_USER_MODEL = 'user.UserDados'
 
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
+
+CRISPY_TEMPLATE_PACK = 'uni_form'
 
 
 # Default primary key field type

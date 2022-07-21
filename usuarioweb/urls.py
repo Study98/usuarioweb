@@ -23,6 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('contas/', include('django.contrib.auth.urls')),
     path('cadastrar/', UserCreate.as_view(),name='cadastro'),
-    path('atualizar/<int:id>', UserUpdate.as_view(),name='atualizar'),
+    path('atualizar/<int:pk>', UserUpdate.as_view(),name='atualizar'),
     
 ]

@@ -1,10 +1,11 @@
+{% load crispy_forms_tags %}
 <h2>Cadastrar</h2>
 
 <form action="" method="post" id= "cadasForm" >
 
     {% csrf_token %}
   
-    {{ form }}
+    {{ form|crispy }}
     <br><br>
     <button type="submit" class="btn btn-primary mt-3">Cadastrar</button>
     <br><br>
