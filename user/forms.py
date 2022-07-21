@@ -6,7 +6,8 @@ class CustomUserDadosCreateForm(UserCreationForm):
     
     class Meta:
         model = UserDados
-        fields = ('luser',)
+        fields = ('username','luser','suser', 'cpf', 'pis','pais','estado',
+                   'municipio','cep','rua','numero','complemento')
         labels = {'username': 'E-mail'}
         
     def save(self, commit = True):
@@ -20,4 +21,5 @@ class CustomUserDadosCreateForm(UserCreationForm):
 class CustomUserDadosChangeForm(UserChangeForm):
     class Meta:
         model = UserDados
-        fields  = ('luser',)
+        fields  = ('username','luser','suser', 'cpf', 'pis','pais','estado',
+                   'municipio','cep','rua','numero','complemento')
