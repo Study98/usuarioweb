@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <div>
+        {% if user.is_anonymous %}
+            <h1> Olá Visitante, Seja bem-vindo(a)! </h1>
+            <a href="{% url 'login' %}">Login</a>
+        {% else %}
+            <div>
+                <h1> Olá {{user.luser}}, Seja bem-vindo(a)!  </h1>
+                
+
+            </div>
+            <a href="{% url 'logout' %}">Logout </a>
+        {% endif %}
+
+
+
+    </div>
+        
+        
+        
+{% endblock %}
