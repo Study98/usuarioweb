@@ -18,13 +18,21 @@ from django.urls import path, include
 from django.views.generic.base import TemplateView
 from user.views import *
 from rest_framework.routers import SimpleRouter
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
 from user.urls import router
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html'),name='index'),
-    path('api/v2/',include(router.urls)),
+    path('api/',include(router.urls)),
     path('admin/', admin.site.urls),
+    
+    # YOUR PATTERNS
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    # Optional UI:
+    path('api/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger'),
+    path('api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+    
     path('contas/', include('django.contrib.auth.urls')),
     path('cadastrar/', UserCreate.as_view(),name='cadastro'),
     path('atualizar/<int:pk>', UserUpdate.as_view(),name='atualizar'),

@@ -14,5 +14,5 @@ class UserDadosSerializer(serializers.ModelSerializer):
         }"""
         
         model = UserDados
-        fields = ('email','louser','luser','suser', 'cpf', 'pis',
+        fields = ('id','email','louser','luser','suser', 'cpf', 'pis',
                   'pais','estado','municipio','cep','rua','numero','complemento',)
