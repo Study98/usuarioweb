@@ -1,6 +1,58 @@
+:root{
+    --cor-fundo: rgb(30, 59, 133) ;
+    --cor-hover: rgb(32, 150, 158) ;
+    --cor-pri: rgb(231, 241, 236) ;
+}
 #hint_id_password {
     display: none;
 }
 #div_id_password{
     display: none;
+}
+
+.dp-menu ul{
+    list-style-type: none;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    
+
+}
+
+.dp-menu ul li{
+    display: inline-block;
+    color: var(--cor-pri);
+    
+}
+
+.dp-menu ul li a{
+    color: var(--cor-pri);
+    text-decoration: none;
+    padding: 10px;
+    transition: background .3s;
+}
+
+/*sub-menu*/
+
+.dp-menu ul li a:hover{
+    background-color: var(--cor-hover);
+}
+
+.dp-menu ul ul{
+    display: none;
+    position: absolute;
+}
+
+.dp-menu ul li:hover ul{
+    display: block;
+    
+}
+
+.dp-menu ul ul{
+    width: 150px;
+    
+}
+
+.dp-menu ul ul li a{
+    display: block;
+    
 }

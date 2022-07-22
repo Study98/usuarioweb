@@ -4,21 +4,16 @@
     <div>
         {% if user.is_anonymous %}
             <h1> Olá Visitante, Seja bem-vindo(a)! </h1>
-            <a href="{% url 'login' %}">Login</a>
         {% else %}
             <div>
                 <h1> Olá {{user.louser}}, Seja bem-vindo(a)!  </h1>
                 <br><br>
-                <a href="atualizar/{{user.id}}">Atualizar Cadastro </a>
                 
                 
 
             </div>
-            <a href="{% url 'logout' %}">Logout </a>
             
         {% endif %}
-        <br>
-        <a href="{% url 'swagger' %}">API-REST</a>
 
 
 

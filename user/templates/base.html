@@ -11,6 +11,33 @@
         <link rel="stylesheet" href="{% static 'styles.css' %}"/>
     </head>
     <body class = "text-center">
+        {% if user.is_anonymous %}
+            <nav class="dp-menu">
+                <ul>
+                    <li><a href="{% url 'swagger' %}">API-REST</a></li>
+                    <li><p>Visitante</p>
+                        <ul>
+                            <li>
+                                <a href="{% url 'login' %}">Logar</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            {% else %}
+            <nav class="dp-menu">
+                <ul>
+                    <li><a href="{% url 'swagger' %}">API-REST</a></li>
+                    <li><p>{{user.louser}}</p>
+                        <ul>
+                            <li><a href="atualizar/{{user.id}}">Atualizar Cadastro </a></li>
+                            <li><a href="{% url 'logout' %}">Logout </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            {% endif %}
+
         {% block content %}
         
         

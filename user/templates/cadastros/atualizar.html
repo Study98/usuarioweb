@@ -8,13 +8,12 @@
     {% csrf_token %}
     
     {{ form|crispy }}
-    <br><br>
     <button type="submit" class="btn btn-primary mt-3">Atualizar</button>
-    <br><br>
+    <br>
     <a href="{% url 'index' %}" class="btn btn-danger mt-3" id="botao">
       Cancelar
     </a>
-    <br><br><br>
+    <br><br>
     <a href="deletar/{{user.id}}">Excluir Cadastro </a>
   
   
