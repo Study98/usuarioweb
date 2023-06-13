@@ -1,4 +1,4 @@
-# usuarioweb
+# usuarioweb - Projeto que usei pra entrar na Pontotel
  Requisitos para o funcionamento do projeto:
  
  -Ter o Python 3.9.7 ou superior instalado na máquina
